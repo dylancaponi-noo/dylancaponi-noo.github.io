@@ -4,6 +4,13 @@ function fixptk(){
   renderStatusX('videoPtk', ytplayer.config.args.ptk);
 }
 
+function showHideElementsByTag(tag, style) {
+  var eles = document.getElementsByTagName(tag);
+  for (i = 0; i < eles.length; i++){
+    eles[i].style.display = style;
+  }
+}
+
 function renderStatusX(id, statusText) {
   if (id !== 'error'){
     showHideElementsByTag('hr', 'block');
