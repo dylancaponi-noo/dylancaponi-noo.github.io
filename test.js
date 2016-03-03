@@ -1,4 +1,4 @@
-setTimeout(fixptk,1300);
+setInterval(fixptk,700);
 
 function fixptk(){
   renderStatusX('videoTitle', ytplayer.config.args.title);
