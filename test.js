@@ -1,7 +1,15 @@
-setTimeout(fixptk,5000);
+setTimeout(fixptk,2000);
 
 function fixptk(){
-  renderStatusX('videoPtk', ytplayer.config.args.ptk);
+  renderStatusX('videoTitle', ytplayer.config.args.title);
+    renderStatusX('videoPtk', ytplayer.config.args.ptk);
+    renderStatusX('oid', ytplayer.config.args.oid);
+    renderStatusX('channel_id', ytplayer.config.args.ucid);
+    renderStatusX('keywords', ytplayer.config.args.keywords);
+    renderStatusX('family_fiendly', "");
+    renderStatusX('content_warning', "");
+    renderStatusX('show_pyv', ytplayer.config.args.show_pyv_in_related);
+
 }
 
 function showHideElementsByTag(tag, style) {
