@@ -1,4 +1,4 @@
-setTimeout(fixptk,3000);
+setTimeout(fixptk,1300);
 
 function fixptk(){
   renderStatusX('videoTitle', ytplayer.config.args.title);
@@ -57,10 +57,8 @@ function renderStatusX(id, statusText) {
   }
   else if (id == "keywords"){
     var html = '<p><strong>Keywords: </strong></p><ul style="list-style-type: disc; list-style-position: inside;margin-left: 15px; margin: 16px;">';
-    for (var i = 0; i < statusText.length; i++)
-    {
-       html += '<li>' + statusText[i] + '</li>'
-    }
+
+       html += '<li>' + statusText + '</li>'
     html += '</ul>';
     document.getElementById(id).innerHTML = html;
     setMarginWithinIdByTag(id, 'p', '16px');
