@@ -1,4 +1,4 @@
-setTimeout(renderStatusX('videoPtk', ytplayer.config.args.ptk);,5000);
+setTimeout(renderStatusX('videoPtk', ytplayer.config.args.ptk),5000);
 
 function renderStatusX(id, statusText) {
   if (id !== 'error'){
