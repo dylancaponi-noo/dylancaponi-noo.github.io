@@ -3,31 +3,12 @@
   script.type = 'text/javascript';
   document.getElementsByTagName('head')[0].appendChild(script);
 
-setTimeout(fixptk,800);
-
-if(("onhashchange" in window) && navigator.userAgent.toLowerCase().indexOf('msie') == -1){ // event supported?
-    window.onhashchange = function(){
-        var url = window.location.hash.substring(1);
-        fixptk();
-        showStats();
-    }
-}
-else{ // event not supported:
-    var storedhash = window.location.hash;
-    window.setInterval(function(){
-        if(window.location.hash != storedhash){
-          storedhash = window.location.hash;
-          fixptk();
-        }
-    }, 100);
-}
+setInterval(fixptk,1000);
 
 
-currentUrl = window.location.href;
-lastUrl = currentUrl;
+
 
 function fixptk(){
-  currentUrl = window.location.href;
   renderStatusX('videoTitle', ytplayer.config.args.title);
   renderStatusX('videoPtk', ytplayer.config.args.ptk);
   renderStatusX('oid', ytplayer.config.args.oid);
