@@ -3,7 +3,25 @@
   script.type = 'text/javascript';
   document.getElementsByTagName('head')[0].appendChild(script);
 
-setInterval(fixptk,700);
+fixptk();
+
+if(("onhashchange" in window) && navigator.userAgent.toLowerCase().indexOf('msie') == -1){ // event supported?
+    window.onhashchange = function(){
+        var url = window.location.hash.substring(1);
+        fixptk();
+        showStats();
+    }
+}
+else{ // event not supported:
+    var storedhash = window.location.hash;
+    window.setInterval(function(){
+        if(window.location.hash != storedhash){
+          storedhash = window.location.hash;
+          fixptk();
+        }
+    }, 100);
+}
+
 
 currentUrl = window.location.href;
 lastUrl = currentUrl;
