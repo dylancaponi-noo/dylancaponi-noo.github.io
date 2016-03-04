@@ -1,6 +1,16 @@
+  var script = document.createElement('script');
+  script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js';
+  script.type = 'text/javascript';
+  document.getElementsByTagName('head')[0].appendChild(script);
+
 setInterval(fixptk,700);
 
+currentUrl = window.location.href;
+lastUrl = currentUrl;
+
 function fixptk(){
+  currentUrl = window.location.href;
+  if (currentUrl !== lastUrl) { showStats() }
   renderStatusX('videoTitle', ytplayer.config.args.title);
   renderStatusX('videoPtk', ytplayer.config.args.ptk);
   renderStatusX('oid', ytplayer.config.args.oid);
@@ -11,6 +21,13 @@ function fixptk(){
   renderStatusX('show_pyv', ytplayer.config.args.show_pyv_in_related);
 
 }
+function showStats(){
+  jQuery("#action-panel-overflow-button").click();
+  jQuery("button[data-trigger-for='action-panel-stats']").click();
+  jQuery('.watch-action-panels').css('display','block');
+  jQuery('.watch-action-panels').height(393);  
+}
+
 
 function showHideElementsByTag(tag, style) {
   var eles = document.getElementsByTagName(tag);
