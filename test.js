@@ -10,7 +10,6 @@ lastUrl = currentUrl;
 
 function fixptk(){
   currentUrl = window.location.href;
-  if (currentUrl !== lastUrl) { showStats() }
   renderStatusX('videoTitle', ytplayer.config.args.title);
   renderStatusX('videoPtk', ytplayer.config.args.ptk);
   renderStatusX('oid', ytplayer.config.args.oid);
@@ -19,6 +18,7 @@ function fixptk(){
   renderStatusX('family_fiendly', "");
   renderStatusX('content_warning', "");
   renderStatusX('show_pyv', ytplayer.config.args.show_pyv_in_related);
+  showStats();
 
 }
 function showStats(){
