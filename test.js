@@ -3,7 +3,7 @@
   script.type = 'text/javascript';
   document.getElementsByTagName('head')[0].appendChild(script);
 
-fixptk();
+setTimeout(fixptk,800);
 
 if(("onhashchange" in window) && navigator.userAgent.toLowerCase().indexOf('msie') == -1){ // event supported?
     window.onhashchange = function(){
