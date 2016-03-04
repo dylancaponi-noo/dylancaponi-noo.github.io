@@ -91,3 +91,10 @@ function renderStatusX(id, statusText) {
     document.getElementById(id).innerHTML = html;
   }
 }
+function setMarginWithinIdByTag(id, tag, styleArg){
+  var eles = document.getElementById(id).getElementsByTagName(tag);
+  for (i = 0; i < eles.length; i++){
+    eles[i].style.margin = styleArg;
+  }
+}
+
