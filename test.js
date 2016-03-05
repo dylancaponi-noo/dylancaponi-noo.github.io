@@ -24,7 +24,8 @@ function showStats(){
   jQuery("#action-panel-overflow-button").click();
   jQuery("button[data-trigger-for='action-panel-stats']").click();
   jQuery('.watch-action-panels').css('display','block');
-  jQuery('.watch-action-panels').height(393);  
+  jQuery('.watch-action-panels').height(393);
+  jQuery("button[data-mode-css='stats-mode-daily']").click();
 }
 
 
