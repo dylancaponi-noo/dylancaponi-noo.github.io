@@ -73,12 +73,12 @@ function renderStatusX(id, statusText) {
   //   document.getElementById(id).innerHTML = html;
   //   document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
   // }
-  // else if (id == "channel_id"){
-  //   var html = '<p><strong>Channel ID:&nbsp;</strong></p>' + '<br>' + statusText;
-  //   document.getElementById(id).style.margin = '16px';
-  //   document.getElementById(id).innerHTML = html;
-  //   document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
-  // }
+  else if (id == "channel_id"){
+    var html = '<p><strong>Channel ID:&nbsp;</strong></p>' + '<br>' + statusText;
+    document.getElementById(id).style.margin = '16px';
+    document.getElementById(id).innerHTML = html;
+    document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
+  }
   else if (id == "keywords"){
     var html = '<p><strong>Keywords: </strong></p><ul style="list-style-type: disc; list-style-position: inside;margin-left: 15px; margin: 16px;">';
 
