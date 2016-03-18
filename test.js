@@ -12,6 +12,7 @@ function fixptk(){
   renderStatusX('videoTitle', ytplayer.config.args.title);
   renderStatusX('videoPtk', ytplayer.config.args.ptk);
   renderStatusX('oid', ytplayer.config.args.oid);
+  renderStatusX('channel_name'), ytplayer.config.args.author);
   renderStatusX('channel_id', ytplayer.config.args.ucid);
   renderStatusX('keywords', ytplayer.config.args.keywords);
   renderStatusX('family_fiendly', "");
@@ -63,6 +64,12 @@ function renderStatusX(id, statusText) {
       var html = '<p><strong>OID:&nbsp;</strong></p>' + statusText;
       document.getElementById(id).style.margin= '16px';
     }
+    document.getElementById(id).innerHTML = html;
+    document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
+  }
+    else if (id == "channel_name"){
+    var html = '<p><strong>Channel Name:&nbsp;</strong></p>' + '<br>' + statusText;
+    document.getElementById(id).style.margin = '16px';
     document.getElementById(id).innerHTML = html;
     document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
   }
