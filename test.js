@@ -12,7 +12,7 @@ function fixptk(){
   renderStatusX('videoTitle', ytplayer.config.args.title);
   renderStatusX('videoPtk', ytplayer.config.args.ptk);
   renderStatusX('oid', ytplayer.config.args.oid);
-  renderStatusX('author'), ytplayer.config.args.author);
+  // renderStatusX('author'), ytplayer.config.args.author);
   renderStatusX('channel_id', ytplayer.config.args.ucid);
   renderStatusX('keywords', ytplayer.config.args.keywords);
   renderStatusX('family_fiendly', "");
@@ -67,12 +67,12 @@ function renderStatusX(id, statusText) {
     document.getElementById(id).innerHTML = html;
     document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
   }
-    else if (id == "author"){
-    var html = '<p><strong>Channel Name:&nbsp;</strong></p>' + '<br>' + statusText;
-    document.getElementById(id).style.margin = '16px';
-    document.getElementById(id).innerHTML = html;
-    document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
-  }
+  //   else if (id == "author"){
+  //   var html = '<p><strong>Channel Name:&nbsp;</strong></p>' + '<br>' + statusText;
+  //   document.getElementById(id).style.margin = '16px';
+  //   document.getElementById(id).innerHTML = html;
+  //   document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
+  // }
   else if (id == "channel_id"){
     var html = '<p><strong>Channel ID:&nbsp;</strong></p>' + '<br>' + statusText;
     document.getElementById(id).style.margin = '16px';
