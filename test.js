@@ -19,7 +19,7 @@ setInterval(fixptk,1000);
 
 function verify_email(){
 	 var xhReq = new XMLHttpRequest();
-	 xhReq.open("GET", 'http://apilayer.net/api/check?access_key=' + access_key + '&email=' + email_address, false);
+	 xhReq.open("GET", 'https://apilayer.net/api/check?access_key=' + access_key + '&email=' + email_address, false);
 	 xhReq.send(null);
 	 var serverResponse = xhReq.responseText;
 	 // alert(serverResponse); // Shows "15"
