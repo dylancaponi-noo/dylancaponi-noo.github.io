@@ -88,8 +88,8 @@ function renderStatusX(id, statusText) {
   }
     else if (id == "author"){
       if (!checked_email){
-      var verified = verify_email(statusText + '@gmail.com');
-      var html = '<p><strong>Author Name:&nbsp;</strong></p>' + '<br>' + statusText + verified;
+      var verified = JSON.parse(verify_email(statusText + '@gmail.com'));
+      var html = '<p><strong>Author Name:&nbsp;</strong></p>' + '<br>' + statusText + 'smtp:' + verified.smtp_check + 'score: ' + verified.score;
       document.getElementById(id).style.margin = '16px';
       document.getElementById(id).innerHTML = html;
       document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
