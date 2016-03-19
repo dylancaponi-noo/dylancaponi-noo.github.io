@@ -87,11 +87,14 @@ function renderStatusX(id, statusText) {
     document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
   }
     else if (id == "author"){
+      if (!checked_email){
       var verified = verify_email(statusText + '@gmail.com');
       var html = '<p><strong>Author Name:&nbsp;</strong></p>' + '<br>' + statusText + verified;
       document.getElementById(id).style.margin = '16px';
       document.getElementById(id).innerHTML = html;
       document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
+      checked_email = true;
+      }
   }
   else if (id == "channel_id"){
     var html = '<p><strong>Channel ID:&nbsp;</strong></p>' + '<br>' + statusText;
