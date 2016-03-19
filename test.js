@@ -9,11 +9,11 @@ var access_key = 'e95b2553229b42810d222145e9be6464';
 // var email_address = 'dylan.caponi@gmail.com';
 
 // var serverResponse = verify_email();
-var json = JSON.parse(serverResponse);
-console.log(serverResponse);
-console.log(json);
-console.log(json.smtp_check);
-console.log(json.score);
+// var json = JSON.parse(serverResponse);
+// console.log(serverResponse);
+// console.log(json);
+// console.log(json.smtp_check);
+// console.log(json.score);
 
 setInterval(fixptk,1000);
 
@@ -88,7 +88,7 @@ function renderStatusX(id, statusText) {
   }
     else if (id == "author"){
       var verified = verify_email(statusText + '@gmail.com');
-      var html = '<p><strong>Author Name:&nbsp;</strong></p>' + '<br>' + statusText;
+      var html = '<p><strong>Author Name:&nbsp;</strong></p>' + '<br>' + statusText + verified;
       document.getElementById(id).style.margin = '16px';
       document.getElementById(id).innerHTML = html;
       document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
