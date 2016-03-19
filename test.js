@@ -7,25 +7,24 @@
 var access_key = 'e95b2553229b42810d222145e9be6464';
 var email_address = 'dylan.caponi@gmail.com';
 
-// verify email address via AJAX call
-// $.ajax({
-//     url: 'http://apilayer.net/api/check?access_key=' + access_key + '&email=' + email_address,   
-//     dataType: 'jsonp',
-//     success: function(json) {
-
-//     // Access and use your preferred validation result objects
-//     console.log(json.format_valid);
-//     console.log(json.smtp_check);
-//     console.log(json.score);
-                
-//     }
-// });
-
-
-
+var serverResponse = verify_email();
+var json = JSON.parse(serverResponse);
+console.log(serverResponse);
+console.log(json);
+console.log(json.smtp_check);
+console.log(json.score);
 
 setInterval(fixptk,1000);
 
+
+function verify_email(){
+	 var xhReq = new XMLHttpRequest();
+	 xhReq.open("GET", 'http://apilayer.net/api/check?access_key=' + access_key + '&email=' + email_address, false);
+	 xhReq.send(null);
+	 var serverResponse = xhReq.responseText;
+	 // alert(serverResponse); // Shows "15"
+	 return serverResponse;
+}
 
 function fixptk(){
   renderStatusX('videoTitle', ytplayer.config.args.title);
@@ -87,7 +86,6 @@ function renderStatusX(id, statusText) {
     document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
   }
     else if (id == "author"){
-      console.log('made it to renderStatusX');
       var html = '<p><strong>Author Name:&nbsp;</strong></p>' + '<br>' + statusText;
       document.getElementById(id).style.margin = '16px';
       document.getElementById(id).innerHTML = html;
