@@ -5,7 +5,7 @@
 
 // set endpoint and your access key
 var checked_email = false;
-var access_key = 'e95b2553229b42810d222145e9be6464';
+// access key was here
 
 // var about_links = $.get('http://www.youtube.com/user/BeckyGVEVO/about').then(function(responseData) {
 //   //responseData is the contents of the other page. Do whatever you want with it.
