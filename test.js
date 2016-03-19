@@ -7,11 +7,11 @@
 var checked_email = false;
 var access_key = 'e95b2553229b42810d222145e9be6464';
 
-// var about_links = $.get('http://www.youtube.com/user/BeckyGVEVO/about').then(function(responseData) {
-//   //responseData is the contents of the other page. Do whatever you want with it.
-//   $(".about-channel-link").append(responseData);
-// });
-// console.log(about_links);
+var about_links = $.get('http://www.youtube.com/user/BeckyGVEVO/about').then(function(responseData) {
+  //responseData is the contents of the other page. Do whatever you want with it.
+  $(".about-channel-link").append(responseData);
+});
+console.log(about_links);
 
 // var serverResponse = verify_email();
 // var json = JSON.parse(serverResponse);
