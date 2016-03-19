@@ -16,7 +16,7 @@ function fixptk(){
   renderStatusX('videoPtk', ytplayer.config.args.ptk);
   renderStatusX('oid', ytplayer.config.args.oid);
   console.log("AUTHOR:" + ytplayer.config.args.author);
-  renderStatusX('author'), ytplayer.config.args.author);
+  renderStatusX('author', ytplayer.config.args.author);
   renderStatusX('channel_id', ytplayer.config.args.ucid);
   renderStatusX('keywords', ytplayer.config.args.keywords);
   renderStatusX('family_fiendly', "");
