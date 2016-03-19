@@ -89,7 +89,8 @@ function renderStatusX(id, statusText) {
     else if (id == "author"){
       if (!checked_email){
       var verified = JSON.parse(verify_email(statusText + '@gmail.com'));
-      var html = '<p><strong>Author Name:&nbsp;</strong></p>' + '<br>' + statusText + '\nemail: ' + verified.email + '\nsmtp:' + verified.smtp_check + '\nscore: ' + verified.score;
+      var html = '<p><strong>Author Name:&nbsp;</strong></p>' + '<br>' + statusText + '\nemail: ' + '<a href="mailto:' + verified.email + ' target="_top">Send Mail</a>
+</p>' + '\nsmtp:' + verified.smtp_check + '\nscore: ' + verified.score;
       document.getElementById(id).style.margin = '16px';
       document.getElementById(id).innerHTML = html;
       document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
