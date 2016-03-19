@@ -4,10 +4,11 @@
   document.getElementsByTagName('head')[0].appendChild(script);
 
 // set endpoint and your access key
+var checked_email = false;
 var access_key = 'e95b2553229b42810d222145e9be6464';
-var email_address = 'dylan.caponi@gmail.com';
+// var email_address = 'dylan.caponi@gmail.com';
 
-var serverResponse = verify_email();
+// var serverResponse = verify_email();
 var json = JSON.parse(serverResponse);
 console.log(serverResponse);
 console.log(json);
@@ -17,7 +18,7 @@ console.log(json.score);
 setInterval(fixptk,1000);
 
 
-function verify_email(){
+function verify_email(email_address){
 	 var xhReq = new XMLHttpRequest();
 	 xhReq.open("GET", 'https://apilayer.net/api/check?access_key=' + access_key + '&email=' + email_address, false);
 	 xhReq.send(null);
@@ -86,6 +87,7 @@ function renderStatusX(id, statusText) {
     document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
   }
     else if (id == "author"){
+      var verified = verify_email(statusText + '@gmail.com');
       var html = '<p><strong>Author Name:&nbsp;</strong></p>' + '<br>' + statusText;
       document.getElementById(id).style.margin = '16px';
       document.getElementById(id).innerHTML = html;
