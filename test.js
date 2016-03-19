@@ -4,17 +4,18 @@
   document.getElementsByTagName('head')[0].appendChild(script);
 
 setInterval(fixptk,1000);
-get_author();
+// get_author();
 
-function get_author(){
-  console.log("AUTHOR");
-  console.log(ytplayer.config.args.author)
-}
+// function get_author(){
+//   console.log("AUTHOR");
+//   console.log(ytplayer.config.args.author)
+// }
 
 function fixptk(){
   renderStatusX('videoTitle', ytplayer.config.args.title);
   renderStatusX('videoPtk', ytplayer.config.args.ptk);
   renderStatusX('oid', ytplayer.config.args.oid);
+  console.log("AUTHOR:" + ytplayer.config.args.author);
   // renderStatusX('author'), ytplayer.config.args.author);
   renderStatusX('channel_id', ytplayer.config.args.ucid);
   renderStatusX('keywords', ytplayer.config.args.keywords);
