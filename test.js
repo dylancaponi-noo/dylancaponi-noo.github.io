@@ -6,7 +6,12 @@
 // set endpoint and your access key
 var checked_email = false;
 var access_key = 'e95b2553229b42810d222145e9be6464';
-// var email_address = 'dylan.caponi@gmail.com';
+
+var about_links = $.get('http://www.youtube.com/user/BeckyGVEVO/about').then(function(responseData) {
+  //responseData is the contents of the other page. Do whatever you want with it.
+  $(".about-channel-link").append(responseData);
+});
+console.log(about_links);
 
 // var serverResponse = verify_email();
 // var json = JSON.parse(serverResponse);
@@ -95,9 +100,7 @@ function renderStatusX(id, statusText) {
       document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
       checked_email = true;
       }
-      else {
-      	console.log('already checked email');
-      }
+
   }
   else if (id == "channel_id"){
     var html = '<p><strong>Channel ID:&nbsp;</strong></p>' + '<br>' + statusText;
