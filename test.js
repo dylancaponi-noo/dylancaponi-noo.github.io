@@ -95,6 +95,9 @@ function renderStatusX(id, statusText) {
       document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
       checked_email = true;
       }
+      else {
+      	console.log('already checked email');
+      }
   }
   else if (id == "channel_id"){
     var html = '<p><strong>Channel ID:&nbsp;</strong></p>' + '<br>' + statusText;
