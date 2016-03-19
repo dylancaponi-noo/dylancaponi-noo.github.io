@@ -67,11 +67,10 @@ function renderStatusX(id, statusText) {
   }
     else if (id == "author"){
       console.log('made it to renderStatusX');
-      var html = '<p><strong>Channel Name:&nbsp;</strong></p>' + '<br>' + statusText;
-      console.log(html);
-  //   document.getElementById(id).style.margin = '16px';
-  //   document.getElementById(id).innerHTML = html;
-  //   document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
+      var html = '<p><strong>Author Name:&nbsp;</strong></p>' + '<br>' + statusText;
+      document.getElementById(id).style.margin = '16px';
+      document.getElementById(id).innerHTML = html;
+      document.getElementById(id).getElementsByTagName('p')[0].style.display = 'inline';
   }
   else if (id == "channel_id"){
     var html = '<p><strong>Channel ID:&nbsp;</strong></p>' + '<br>' + statusText;
